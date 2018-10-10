@@ -2,22 +2,17 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+     <button type="submit" class="btn btn-primary" onclick="window.location='{{ url("/wypozycz") }}'">
+                                    {{ __('Wypozyczalnia') }}
+                                </button>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                                   <button type="submit" class="btn btn-primary" onclick="window.location='{{ route('list') }}'">
+                                    {{ __('Twoja lista wypozyczen') }}
+                                </button>
 
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
+                                   <button type="submit" class="btn btn-primary" onclick="window.location='{{ route('personal_show') }}'">
+                                    {{ __('Biblioteczka personalna') }}
+                                </button>
 </div>
 @endsection
+	

@@ -23,10 +23,10 @@ class SocialAuthGoogleController extends Controller
         try {
             
         
-            $googleUser = Socialite::driver('google')->user();
-            $existUser = User::where('email',$googleUser->email)->first();
-            
+            $googleUser = Socialite::driver('google')->stateless()->user();
 
+            $existUser = User::where('email',$googleUser->email)->first();
+      
             if($existUser) {
                 Auth::loginUsingId($existUser->id);
             }
@@ -36,6 +36,7 @@ class SocialAuthGoogleController extends Controller
                 $user->email = $googleUser->email;
                 $user->google_id = $googleUser->id;
                 $user->password = md5(rand(1,10000));
+                $user->role = 'User';
                 $user->save();
                 Auth::loginUsingId($user->id);
             }
