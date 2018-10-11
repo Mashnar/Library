@@ -37,3 +37,4 @@ Route::get('/wypozycz','MenageController@take')->name('wypozycz');
 Route::get('/update/{id}','MenageController@wypozycz')->name('update');
 Route::get('/list','MenageController@list')->name('list');
 Route::get('/personal','MenageController@show_personal')->name('personal_show');
+Route::get('/oddaj/{id}','MenageController@oddaj')->name('oddaj');

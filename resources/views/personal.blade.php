@@ -14,17 +14,15 @@
       <th scope="col">Nazwa Ksiazki</th>
       <th scope="col">Autor</th>
       <th scope="col">Opis</th>
-      <td scope="col">Zwroc</td>
     </tr>
   </thead>
   <tbody>
     <tr>
-    	@foreach($book->book as $books)
+    	@foreach($book as $books)
       <th scope="row">{{$loop->iteration}}</th>
       <td>{{$books->name}}</td>
       <td>{{$books->author}}</td>
       <td>{{$books->description}}</td>
-      <td><a href="{{route('oddaj', ['id' => $books->id])}}">Kliknij</a>
       
     </tr>
     
@@ -35,5 +33,10 @@
 
   <button type="submit" class="btn btn-primary" onclick="window.location='{{ url("/home") }}'">
                                     {{ __('Powrot') }}
+                                </button>
+
+
+                                 <button type="submit" class="btn btn-primary" onclick="window.location='{{ url("/add_book") }}'">
+                                    {{ __('Dodaj Ksiazke') }}
                                 </button>
 @endsection

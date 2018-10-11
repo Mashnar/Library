@@ -56,6 +56,7 @@ class LoginController extends Controller
     ];
 
 
+
     if (Auth::attempt($credentials)) {
 /*
 
@@ -77,6 +78,8 @@ class LoginController extends Controller
                return redirect()->to('/home');
       }
     }
+    else
+      return redirect()->back();
 
 }
 }

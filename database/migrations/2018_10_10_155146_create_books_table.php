@@ -18,6 +18,7 @@ class CreateBooksTable extends Migration
             $table->string('name');
             $table->string('author');
             $table->string('description');
+            $table->boolean('wypozyczona')->nullable();
             $table->integer('count_borrow')->nullable();
             $table->timestamps();
         });

@@ -48,4 +48,15 @@ class User extends Authenticatable
 {
   return $this->id;
 }
+
+public function getRole()
+{
+    return $this->role;
+}
+
+public function availableItems()
+{
+    $ids = DB::table('book_user')->where('user_id', '=', $this->id)->lists('user_id');
+    return Item::whereNotIn('id', $ids)->get();
+}
 }

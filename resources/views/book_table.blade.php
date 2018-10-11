@@ -15,6 +15,7 @@
       <th scope="col">Autor</th>
       <th scope="col">Opis</th>
       <th scope="col">Liczba wypozyczen</th>
+      <th scope="col">Dostepnosc</th>
     </tr>
   </thead>
   <tbody>
@@ -25,6 +26,15 @@
       <td>{{$books->author}}</td>
       <td>{{$books->description}}</td>
       <td>{{$books->count_borrow}}
+        <td>
+          
+@if($books->wypozyczona==true)
+
+Nie
+@else
+Tak
+@endif
+        </td>
     </tr>
     
     @endforeach

@@ -4,7 +4,8 @@
 @section('content')
 
 
-  <form method="POST" action="{{ route('submit') }}">
+  <form method="POST" action="{{
+   route('submit') }}">
                         @csrf
 
 
