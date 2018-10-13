@@ -25,7 +25,7 @@
       <td>{{$books->name}}</td>
       <td>{{$books->author}}</td>
       <td>{{$books->description}}</td>
-      <td>{{$books->count_borrow}}
+        <td>  <a href="{{route('details', ['id' => $books->id])}}">{{$books->count_borrow}}</a></td>
         <td>
           
 @if($books->wypozyczona==true)

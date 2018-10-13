@@ -23,7 +23,6 @@ Route::get('/callback', 'SocialAuthGoogleController@callback');
 
 
 
-
 Route::get('/home', 'HomeController@user')->name('home');
 Route::get('/admin', 'HomeController@admin')->name('admin');
 
@@ -38,3 +37,4 @@ Route::get('/update/{id}','MenageController@wypozycz')->name('update');
 Route::get('/list','MenageController@list')->name('list');
 Route::get('/personal','MenageController@show_personal')->name('personal_show');
 Route::get('/oddaj/{id}','MenageController@oddaj')->name('oddaj');
+Route::get('details/{id}','MenageController@details')->name('details');

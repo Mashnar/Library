@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class BookUser extends Migration
+class CreateHistoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,19 +12,15 @@ class BookUser extends Migration
      * @return void
      */
     public function up()
-
     {
- Schema::create('book_user', function (Blueprint $table)
- {
-         $table->increments('id');
-     $table->integer('book_id')->unsigned()->nullable()->index();
+        Schema::create('histories', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('book_id')->unsigned()->nullable()->index();
             $table->integer('user_id')->unsigned()->nullable()->index();
 
-             $table->timestamps();
-});
-    
+            $table->timestamps();
+        });
     }
-    
 
     /**
      * Reverse the migrations.
@@ -33,7 +29,6 @@ class BookUser extends Migration
      */
     public function down()
     {
-        //
-        Schema::dropIfExists('book_user');
+        Schema::dropIfExists('histories');
     }
 }

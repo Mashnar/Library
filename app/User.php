@@ -2,13 +2,8 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\User;
-use App\PersonalLibrary;
-
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
@@ -44,6 +39,10 @@ class User extends Authenticatable
  }
 
 
+   
+
+
+
     public function getId()
 {
   return $this->id;
@@ -54,9 +53,5 @@ public function getRole()
     return $this->role;
 }
 
-public function availableItems()
-{
-    $ids = DB::table('book_user')->where('user_id', '=', $this->id)->lists('user_id');
-    return Item::whereNotIn('id', $ids)->get();
-}
+
 }

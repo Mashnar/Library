@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\User;
+use App\History;
 class Book extends Model
 {
     //
@@ -19,6 +20,13 @@ class Book extends Model
         return $this->belongsToMany('App\User')->withTimestamps();
     }
 
+        public function history()
+    {
+        return $this->belongsToMany('App\User','histories')->withTimestamps();
+    }
+
+
+   
   
 }
 
